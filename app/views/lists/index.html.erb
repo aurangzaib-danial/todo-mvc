@@ -2,24 +2,30 @@
   
   <header class="header">
     <h1>Your Lists</h1>
-    <input class="new-todo" placeholder="What needs to be done?" autofocus>
+    
+    <%= form_for @list do |f| %>
+      <%= f.text_field :title, class: 'new-todo', placeholder: 'Make a new list', autofocus: true %>
+    <% end %>
+
   </header>
 
   <section class="main">
 
     <ul class="todo-list">
-      <li>
-        <div class="view">
-          <label>Milk</label>
-        </div>
-      </li>
-      <li>
-        <div class="view">
-          <label>Coffee</label>
-        </div>
-      </li>
+      
+      <% @lists.each do |list| %>
+
+        <li>
+          <div class="view">
+            <label><%= link_to list.title, list %></label>
+          </div>
+        </li>
+
+      <% end %>
+
     </ul>
 
   </section>
 
-</section>
+</section> <!-- todoapp -->
+
