@@ -8,13 +8,17 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    @list.save
 
-    redirect_to @list
+    if @list.save
+      redirect_to @list
+    else
+      @lists = List.all
+      render :index
+    end
   end
 
   def show
-
+    @task = @list.tasks.build
   end
 
   private

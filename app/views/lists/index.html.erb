@@ -4,7 +4,8 @@
     <h1>Your Lists</h1>
     
     <%= form_for @list do |f| %>
-      <%= f.text_field :title, class: 'new-todo', placeholder: 'Make a new list', autofocus: true %>
+      <%= f.text_field :title, class: 'new-todo', autofocus: true, 
+      placeholder: (error_text('title', @list) || 'Make a new list') %>
     <% end %>
 
   </header>

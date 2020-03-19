@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
   root 'lists#index'
-  resources :lists, except: :index
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  resources :lists, only: [:index, :create, :show] do
+    resources :tasks, only: [:create]
+  end
 end

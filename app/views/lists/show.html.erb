@@ -3,22 +3,23 @@
   <header class="header">
     <h1><%= @list.title %></h1>
     
-    <input class="new-todo" placeholder="Add an item" autofocus>
+    <%= form_with model: [@list, @task] do |task_form| %>
+      <%= task_form.text_field :description, class: 'new-todo', autofocus: true, 
+      placeholder: (error_text(:description, @task) || 'Add a new task') %>
+    <% end %>
+    
   </header>
 
   <section class="main">
 
     <ul class="todo-list">
-      <li>
-        <div class="view">
-          <label>Milk</label>
-        </div>
-      </li>
-      <li>
-        <div class="view">
-          <label>Coffee</label>
-        </div>
-      </li>
+      <% @list.tasks.each do |task| %>
+        <li>
+          <div class="view">
+            <label><%= task.description %></label>
+          </div>
+        </li>
+      <% end %>
     </ul>
 
   </section>
