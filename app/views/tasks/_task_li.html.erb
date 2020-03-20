@@ -1,0 +1,16 @@
+<%= li_for_task(task) do %>
+
+  <div class="view">
+
+    <%= form_with model: [@list, task] do |task_form| %>
+      
+      <%= task_form.check_box :complete, class: 'toggle', 
+      checked: task.complete?, id: id_for_task(task) %>
+
+      <%= label_tag id_for_task(task), task.description %>
+    <% end %>
+
+  </div>
+
+
+<% end %>
