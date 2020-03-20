@@ -23,6 +23,8 @@ Lecture 3 (Complete)
 
 Lecture 4
 
+1. Refactor redundant parts using partials
+
 
 
 

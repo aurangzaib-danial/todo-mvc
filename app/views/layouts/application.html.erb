@@ -11,9 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
-    <footer class="info">
-      <p><%= link_to 'Home', root_path %></p>
-    </footer>
+    <section class="todoapp">
+
+      <%= yield %>
+
+    </section> <!-- todoapp -->
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>
