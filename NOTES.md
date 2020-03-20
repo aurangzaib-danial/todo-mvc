@@ -16,6 +16,15 @@ Lecture 2 (complete)
 2. Validate a list name and item description and render errors.
 
 
+Lecture 3 (Complete)
+
+1. be able to mark a task complete or incomplete
+
+
+Lecture 4
+
+
+
 
 Steps Whatever
 1. Check if list exists before creating a task

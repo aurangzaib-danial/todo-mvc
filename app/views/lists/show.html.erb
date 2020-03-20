@@ -2,8 +2,7 @@
   
   <header class="header">
     <h1><%= @list.title %></h1>
-    
-    <%= form_with model: [@list, @task] do |task_form| %>
+    <%= form_with model: [@list, @task], local: true do |task_form| %>
       <%= task_form.text_field :description, class: 'new-todo', autofocus: true, 
       placeholder: (error_text(:description, @task) || 'Add a new task') %>
     <% end %>
@@ -14,9 +13,16 @@
 
     <ul class="todo-list">
       <% @list.tasks.each do |task| %>
-        <li>
+        <li class="<%= 'completed' if task.complete? %>">
           <div class="view">
-            <label><%= task.description %></label>
+
+            <%= form_with model: [@list, task] do |task_form| %>
+              <%= task_form.check_box :complete, class: 'toggle', 
+              checked: ('checked' if task.complete?), id: "task_complete_#{task.id}" %>
+
+              <%= task_form.label :complete, task.description, for: "task_complete_#{task.id}" %>
+            <% end %>
+
           </div>
         </li>
       <% end %>

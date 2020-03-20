@@ -18,7 +18,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    @task = @list.tasks.build
+    @task = Task.new
   end
 
   private

@@ -3,7 +3,7 @@
   <header class="header">
     <h1>Your Lists</h1>
     
-    <%= form_for @list do |f| %>
+    <%= form_with model: @list, local: true do |f| %>
       <%= f.text_field :title, class: 'new-todo', autofocus: true, 
       placeholder: (error_text('title', @list) || 'Make a new list') %>
     <% end %>
