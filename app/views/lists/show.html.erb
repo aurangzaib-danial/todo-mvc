@@ -1,32 +1,30 @@
-
+<header class="header">
+  <h1><%= @list.title %></h1>
   
-  <header class="header">
-    <h1><%= @list.title %></h1>
-    <%= form_with model: [@list, @task], local: true do |task_form| %>
-      <%= task_form.text_field :description, class: 'new-todo', autofocus: true, 
-      placeholder: (error_text(:description, @task) || 'Add a new task') %>
+  <%= form_with model: [@list, @task], local: true do |task_form| %>
+    <%= main_field task_form, :description, 'Add a new task' %>
+  <% end %>
+
+</header>
+
+<section class="main">
+
+  <ul class="todo-list">
+    <% @list.tasks.each do |task| %>
+      <li class="<%= 'completed' if task.complete? %>">
+        <div class="view">
+
+          <%= form_with model: [@list, task] do |task_form| %>
+            <%= task_form.check_box :complete, class: 'toggle', 
+            checked: ('checked' if task.complete?), id: "task_complete_#{task.id}" %>
+
+            <%= task_form.label :complete, task.description, for: "task_complete_#{task.id}" %>
+          <% end %>
+
+        </div>
+      </li>
     <% end %>
-    
-  </header>
+  </ul>
 
-  <section class="main">
-
-    <ul class="todo-list">
-      <% @list.tasks.each do |task| %>
-        <li class="<%= 'completed' if task.complete? %>">
-          <div class="view">
-
-            <%= form_with model: [@list, task] do |task_form| %>
-              <%= task_form.check_box :complete, class: 'toggle', 
-              checked: ('checked' if task.complete?), id: "task_complete_#{task.id}" %>
-
-              <%= task_form.label :complete, task.description, for: "task_complete_#{task.id}" %>
-            <% end %>
-
-          </div>
-        </li>
-      <% end %>
-    </ul>
-
-  </section>
+</section>
 

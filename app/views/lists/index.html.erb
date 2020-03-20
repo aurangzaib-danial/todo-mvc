@@ -1,32 +1,17 @@
-
+<header class="header">
+  <h1>Your Lists</h1>
   
-  <header class="header">
-    <h1>Your Lists</h1>
-    
-    <%= form_with model: @list, local: true do |f| %>
-      <%= f.text_field :title, class: 'new-todo', autofocus: true, 
-      placeholder: (error_text('title', @list) || 'Make a new list') %>
-    <% end %>
+  <%= form_with model: @list, local: true do |list_form| %>
+    <%= main_field list_form, :title, 'Make a new list' %>
+  <% end %>
 
-  </header>
+</header>
 
 
-  <section class="main">
+<section class="main">
 
-    <ul class="todo-list">
-      
-      <% @lists.each do |list| %>
+  <ul class="todo-list">
+    <%= render partial: 'list_li', collection: @lists, as: :list %>
+  </ul>
 
-        <li>
-          <div class="view">
-            <label><%= link_to list.title, list %></label>
-          </div>
-        </li>
-
-      <% end %>
-
-    </ul>
-
-  </section>
-
-
+</section>

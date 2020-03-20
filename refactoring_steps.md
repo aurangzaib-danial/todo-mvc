@@ -1,3 +1,3 @@
 [X] Refactor layout
-[] Refactor Lists
+[X] Refactor Lists
 [] Refactor Items
