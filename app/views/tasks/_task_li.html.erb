@@ -2,15 +2,10 @@
 
   <div class="view">
 
-    <%= form_with model: [@list, task] do |task_form| %>
-      
-      <%= task_form.check_box :complete, class: 'toggle', 
-      checked: task.complete?, id: id_for_task(task) %>
+    <%= render 'tasks/check_box_form', task: task %>
 
-      <%= label_tag id_for_task(task), task.description %>
-    <% end %>
+    <%= render 'tasks/delete_form', task: task %>
 
   </div>
-
 
 <% end %>

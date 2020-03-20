@@ -21,12 +21,15 @@ Lecture 3 (Complete)
 1. be able to mark a task complete or incomplete
 
 
-Lecture 4
+Lecture 4 (Complete)
 
 1. Refactor redundant parts using partials
 
-
+Lecture 5 (Complete)
+1. Add delete button to tasks
 
 
 Steps Whatever
 1. Check if list exists before creating a task
+2. Add authentication
+2. User have many lists
