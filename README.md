@@ -1,24 +1,6 @@
-# README
+# TodoMVC
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a sandbox for implementing whatever latest web technologies I learn.
 
-Things you may want to cover:
+On every iteration, I add a new feature or a technology.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
