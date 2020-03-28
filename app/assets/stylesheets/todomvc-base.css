@@ -52,7 +52,7 @@ body {
 .todoapp input::-webkit-input-placeholder {
 	font-style: italic;
 	font-weight: 300;
-	color: #e6e6e6;
+	color: #D3D3D3;
 }
 
 .todoapp input::-moz-placeholder {

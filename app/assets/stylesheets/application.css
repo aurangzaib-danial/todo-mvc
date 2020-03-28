@@ -13,4 +13,16 @@
  
  *= require 'todomvc-base'
  *= require 'lists'
+ *= require 'authentication'
  */
+
+div.field_with_errors input{
+  border: 1px solid red;
+}
+
+div.error {
+  font-size: 18px;
+  color: red;
+  text-align: center;
+  padding-top: 20px;
+}
