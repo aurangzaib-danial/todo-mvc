@@ -12,4 +12,18 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find(current_user_id) if logged_in?
   end
+
+  private
+
+  def redirect_if_logged_in
+    redirect_to root_path if logged_in?
+  end
+
+  def require_login
+    redirect_to root_path if !logged_in?
+  end
+
+  def verify_list_belongs_to_current_user
+    redirect_to root_path if @list.user_id != current_user_id
+  end
 end

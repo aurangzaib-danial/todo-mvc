@@ -1,4 +1,11 @@
 class SessionsController < ApplicationController
+  
+  before_action :redirect_if_logged_in, except: :destroy
+
+  def new
+
+  end
+
   def create
     user = User.find_by_email(params[:email])
 
@@ -9,5 +16,10 @@ class SessionsController < ApplicationController
       flash.now[:error] = 'Incorrect Email/Password'
       render :new
     end
+  end
+
+  def destroy
+    reset_session if logged_in?
+    redirect_to root_path
   end
 end

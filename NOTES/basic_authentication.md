@@ -4,7 +4,9 @@
 - [x] Sign up page and redirect to root page
 - [x] Setup login page
 - [x] User has many lists
-- [ ] Protect your routes
+- [x] Protect your routes
+- [ ] Delete a list
+- [ ] Responsive
 - [ ] Push to heroku
 
 
@@ -19,6 +21,19 @@ In terms of URL, I have to create a /signup route and link it UsersController ne
 
 ## Protect routes
 
+Logged out
 /signup
 /login
 
+
+Logged in
+
+root
+
+lists
+  create
+  show
+
+tasks
+  create
+  update

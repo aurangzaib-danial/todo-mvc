@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
-
-  before_action :set_list_and_task, except: :create
+  before_action :require_login
+  before_action :set_list
+  before_action :verify_list_belongs_to_current_user
+  before_action :set_task, except: :create
 
   def create
-    @list = List.find(params[:list_id])
     @task = Task.new(task_params(:description))
     @task.list = @list
 
@@ -32,8 +33,11 @@ class TasksController < ApplicationController
     params.require(:task).permit(*args)
   end
 
-  def set_list_and_task
+  def set_list
     @list = List.find(params[:list_id])
+  end
+
+  def set_task
     @task = @list.tasks.find(params[:id])
   end
 

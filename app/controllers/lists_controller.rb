@@ -1,10 +1,7 @@
 class ListsController < ApplicationController
+  before_action :require_login
   before_action :set_list, only: :show
-
-  def index
-    @list = List.new
-    @lists = List.all
-  end
+  before_action :verify_list_belongs_to_current_user, only: :show
 
   def create
     @list = List.new(list_params)

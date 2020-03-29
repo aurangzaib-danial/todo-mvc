@@ -1,0 +1,24 @@
+// Place all the styles related to the site controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+div.intro {
+  font-size: 22px;
+  text-align: center;
+  color: #a9a9a9;
+}
+
+div.intro p:last-child {
+  padding: 10px 0 30px;
+}
+
+div.intro :nth-last-child(2) {
+  padding-top: 10px;
+}
+
+div.intro p a {
+  color: #4d4d4d;
+  text-decoration: none;
+
+}
