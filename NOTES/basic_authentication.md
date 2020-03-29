@@ -6,8 +6,8 @@
 - [x] User has many lists
 - [x] Protect your routes
 - [x] Delete a list
-- [ ] Responsive
-- [ ] Push to heroku
+- [x] Responsive
+- [x] Push to heroku
 
 
 Must use following

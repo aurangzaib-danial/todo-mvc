@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: todo_mvc_production
-  username: todo_mvc
-  password: <%= ENV['TODO_MVC_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

@@ -11,10 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  
- *= require 'todomvc-base'
- *= require 'lists'
- *= require 'authentication'
- *= require 'site'
+ *= require_tree .
  */
 
 div.field_with_errors input{
