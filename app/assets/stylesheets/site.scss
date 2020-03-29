@@ -22,3 +22,26 @@ div.intro p a {
   text-decoration: none;
 
 }
+
+h1 {
+  width: 100%;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+}
+
+
+@media (max-width: 500px) {
+
+  .todoapp section.main {
+    padding: 0 5px;
+  }
+
+  h1 {
+    font-size: 70px;
+  }
+}

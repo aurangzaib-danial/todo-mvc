@@ -1,3 +1,21 @@
 div.field_with_errors input{
   border: 1px solid red;
 }
+
+
+.todo-list li label.list-label {
+  padding-left: 20px;
+}
+
+#list-title {
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1em;
+  color: #4d4d4d;
+}
+
+@media (max-width: 500px) {
+  #list-title {
+    font-size: 24px;
+  }
+}

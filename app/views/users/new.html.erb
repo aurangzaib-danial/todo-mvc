@@ -1,6 +1,5 @@
+<% main_text 'Sign Up' %>
 <header class="header">
-  <h1>Sign Up</h1>
-  
   <%= form_with model: @user, url: signup_path, local: true do |form| %>
     <%= form.email_field :email, class: 'new-todo', autofocus: true, placeholder: 'Enter your email', required: true %>
 

@@ -7,4 +7,8 @@ module ApplicationHelper
     form_builder.text_field(attribute, class: 'new-todo', autofocus: true, 
       placeholder: placeholder_text(attribute, form_builder.object, placeholder))
   end
+
+  def main_text(text)
+    content_for :main_text, text
+  end
 end

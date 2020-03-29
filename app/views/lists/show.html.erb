@@ -1,6 +1,7 @@
+<% main_text @list.title %>
+<% content_for :main_text_id, 'list-title' %>
+
 <header class="header">
-  <h1><%= @list.title %></h1>
-  
   <%= form_with model: [@list, @task], local: true do |task_form| %>
     <%= main_field task_form, :description, 'Add a new task' %>
   <% end %>

@@ -1,2 +1,0 @@
-
-- [ ] Editable tasks

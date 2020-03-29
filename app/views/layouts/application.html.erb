@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TodoMvc</title>
+    <title><%= yield :main_text %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
 
@@ -15,6 +17,8 @@
       <%= content_tag :div, msg, class: name %>
     <% end %>
     
+    <h1 id="<%= yield :main_text_id %>"><%= yield :main_text %></h1>
+
     <section class="todoapp">
 
       <%= yield %>
