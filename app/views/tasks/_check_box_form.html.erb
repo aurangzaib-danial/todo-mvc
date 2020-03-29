@@ -3,5 +3,5 @@
   <%= task_form.check_box :complete, class: 'toggle', 
   checked: task.complete?, id: id_for_task(task) %>
 
-  <%= label_tag id_for_task(task), task.description %>
+  <label><%= task.description %></label>
 <% end %>

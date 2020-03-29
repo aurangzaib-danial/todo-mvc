@@ -5,7 +5,7 @@
 - [x] Setup login page
 - [x] User has many lists
 - [x] Protect your routes
-- [ ] Delete a list
+- [x] Delete a list
 - [ ] Responsive
 - [ ] Push to heroku
 

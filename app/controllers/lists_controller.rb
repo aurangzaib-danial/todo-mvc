@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :require_login
-  before_action :set_list, only: :show
+  before_action :set_list, except: :create
   before_action :verify_list_belongs_to_current_user, only: :show
 
   def create
@@ -17,6 +17,12 @@ class ListsController < ApplicationController
 
   def show
     @task = Task.new
+  end
+
+  def destroy
+    @list.destroy
+
+    redirect_to root_path
   end
 
   private

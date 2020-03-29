@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   delete 'logout', to: 'sessions#destroy'
 
-  resources :lists, only: [:create, :show] do
+  resources :lists, only: [:create, :show, :destroy] do
     resources :tasks, only: [:create, :update, :destroy]
   end
 end
