@@ -13,6 +13,20 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(current_user_id) if logged_in?
   end
 
+  def current_user=(user)
+    
+    if user.class == User || user == nil 
+
+      session[:user_id] = user.try(:id)
+
+      @current_user = user
+
+    else
+      raise 'Expected a User or Nil object'
+    end
+
+  end
+
   private
 
   def redirect_if_logged_in
