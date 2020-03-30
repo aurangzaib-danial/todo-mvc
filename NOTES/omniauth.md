@@ -5,7 +5,7 @@
 - [x] Setup OmniAuth
 - [x] Test Developer strategy
 - [x] Install Figaro
-- [ ] Setup GitHub auth
+- [x] Setup GitHub auth
 - [ ] Setup Facebook auth
 - [ ] Setup Twitter Auth
 - [ ] Setup Google Auth
