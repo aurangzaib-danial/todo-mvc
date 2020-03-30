@@ -2,9 +2,9 @@
 # Implementing OmniAuth
 
 - [x] Refactor current authentication system
-- [ ] Setup OmniAuth
-- [ ] Test Developer strategy
-- [ ] Install Figaro
+- [x] Setup OmniAuth
+- [x] Test Developer strategy
+- [x] Install Figaro
 - [ ] Setup GitHub auth
 - [ ] Setup Facebook auth
 - [ ] Setup Twitter Auth

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   post 'login', to: 'sessions#create'
 
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+
   delete 'logout', to: 'sessions#destroy'
 
   resources :lists, only: [:create, :show, :destroy] do
