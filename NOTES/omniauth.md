@@ -6,8 +6,8 @@
 - [x] Test Developer strategy
 - [x] Install Figaro
 - [x] Setup GitHub auth
-- [ ] Setup Facebook auth
-- [ ] Setup Twitter Auth
+- [x] Setup Facebook auth
+- [] Setup Twitter Auth
 - [ ] Setup Google Auth
 - [ ] Update the callback URL of each provider
 
