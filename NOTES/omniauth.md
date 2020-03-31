@@ -7,14 +7,9 @@
 - [x] Install Figaro
 - [x] Setup GitHub auth
 - [x] Setup Facebook auth
-- [] Setup Twitter Auth
-- [ ] Setup Google Auth
+- [x] Setup Google Auth
+- [ ] Make login button pretty
 - [ ] Update the callback URL of each provider
-
-
-# Some edits on the interface
-- [ ] Make the login buttons pretty
-- [ ] Fix the problem of safari double clicks
 
 
 # Post feature completion
@@ -24,6 +19,6 @@
 
 ## Refactor current authentication system
 
-- [ ] define a current user writer
-- [ ] use the current user writer for setting the session
-- [ ] protect the writer to only either accept nil or user object.
+- [x] define a current user writer
+- [x] use the current user writer for setting the session
+- [x] protect the writer to only either accept nil or user object.

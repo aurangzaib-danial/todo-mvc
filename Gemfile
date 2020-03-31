@@ -19,6 +19,9 @@ gem 'sprockets', '~> 4'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
 
+gem 'bootstrap'
+gem "font-awesome-rails"
+
 gem 'record_tag_helper'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
