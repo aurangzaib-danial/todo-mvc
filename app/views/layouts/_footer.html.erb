@@ -1,5 +1,12 @@
 <footer class="info">
   <p><%= current_user.email if logged_in? %></p>
   <p><%= link_to 'Home', root_path %></p>
-  <p><%= button_to 'Log out', logout_path, method: :delete if logged_in? %></p>
+  <p><%= button_to 'Log out', logout_path, method: :delete, class: 'btn btn-light' if logged_in? %></p>
+
+
 </footer>
+
+<section id="credits">
+  <p>Based on <%= link_to 'TODOMVC', 'http://todomvc.com/' %></p>
+  <p>MADE WITH <i class="fa fa-heart"></i> BY <%= link_to 'Aurangzaib Danial', 'https://github.com/aurangzaib-danial' %></p>
+</section>

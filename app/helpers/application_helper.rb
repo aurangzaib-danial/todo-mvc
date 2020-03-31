@@ -11,4 +11,23 @@ module ApplicationHelper
   def main_text(text)
     content_for :main_text, text
   end
+
+
+  def login_link(site)
+
+    url = "/auth/#{site}"
+    
+    url << '_oauth2' if site == 'google'
+
+    link_text = "Sign in with #{site.capitalize}"
+
+    link_class = "btn btn-block btn-social btn-#{site}"
+
+    span_class = "fa fa-#{site}"
+
+    link_to(url, class: link_class) do
+      content_tag(:span, nil, class: span_class) << link_text
+    end
+  end
+
 end

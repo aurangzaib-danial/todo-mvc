@@ -1,8 +1,19 @@
+h1 {
+  width: 100%;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+}
 
 div.intro {
   font-size: 22px;
   text-align: center;
   color: #a9a9a9;
+  margin-top: 15px;
 }
 
 div.intro p:last-child {
@@ -20,20 +31,43 @@ div.intro p a {
 }
 
 div#social-links {
-  width: 50%;
+  width: 255px;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }
 
-h1 {
-  width: 100%;
-  font-size: 100px;
-  font-weight: 100;
+div#social-links a {
+  margin-bottom: 20px;
+}
+
+div#social-links a:last-child {
+  margin-bottom: 0;
+}
+
+p#separater {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   margin: 10px 0 30px; 
+   font-size: 22px;
+   color: #4d4d4d;
+} 
+
+p#separater span { 
+    background: #fff; 
+    padding:0 10px; 
+}
+
+section#credits {
+  color: #4d4d4d;
   text-align: center;
-  color: rgba(175, 47, 47, 0.15);
-  -webkit-text-rendering: optimizeLegibility;
-  -moz-text-rendering: optimizeLegibility;
-  text-rendering: optimizeLegibility;
+  margin-top: 40px;
 }
 
+#credits i {
+  color: red;
+}
 
 @media (max-width: 500px) {
 
