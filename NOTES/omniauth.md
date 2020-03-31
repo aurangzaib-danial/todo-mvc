@@ -8,12 +8,12 @@
 - [x] Setup GitHub auth
 - [x] Setup Facebook auth
 - [x] Setup Google Auth
-- [ ] Interface changes
-- [ ] Update the callback URL of each provider
+- [x] Interface changes
+- [x] Update the callback URL of each provider
 
 
 # Post feature completion
-- [ ] Push to Heroku
+- [x] Push to Heroku
 
 --- 
 
@@ -31,4 +31,3 @@
 - [x] Fix list show page title
 - [x] Fix the task checkbox
 - [x] Make the logout button pretty
-- [ ] Fix safari double clicks
