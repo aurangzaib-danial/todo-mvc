@@ -1,6 +1,6 @@
 <% main_text 'TodoLists' %>
 
-<% if logged_in? %>
+<% if user_signed_in? %>
   <%= render 'lists' %>
 <% else %>
   <%= render 'welcome' %>

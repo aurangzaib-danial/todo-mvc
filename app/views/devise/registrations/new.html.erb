@@ -1,0 +1,16 @@
+<% main_text 'Sign Up' %>
+
+<header class="header">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <%= f.email_field :email, class: 'new-todo', autofocus: true, autocomplete: 'email', placeholder: 'Enter your email', required: true %>
+
+    <%= f.password_field :password, class: 'new-todo', autocomplete: 'new-password', placeholder: 'Enter your password', minlength: 6, required: true %>
+
+    <%= f.password_field :password_confirmation, class: 'new-todo', autocomplete: 'new-password', placeholder: 'Confirm Password', min: 6, required: true %>
+
+    <button type="submit" class="auth_button">Sign Up</button>
+  <% end %>
+  
+</header>
+

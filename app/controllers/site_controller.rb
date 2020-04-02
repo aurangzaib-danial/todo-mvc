@@ -1,7 +1,7 @@
 class SiteController < ApplicationController
 
   def index
-    if logged_in?
+    if user_signed_in?
       @list = List.new
       @lists = List.all
     end

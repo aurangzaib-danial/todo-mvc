@@ -1,7 +1,7 @@
 <footer class="info">
-  <p><%= current_user.email if logged_in? %></p>
+  <p><%= current_user.email if user_signed_in? %></p>
   <p><%= link_to 'Home', root_path %></p>
-  <p><%= button_to 'Log out', logout_path, method: :delete, class: 'btn btn-light' if logged_in? %></p>
+  <p><%= button_to 'Log out', logout_path, method: :delete, class: 'btn btn-light' if user_signed_in? %></p>
 
 
 </footer>
