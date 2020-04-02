@@ -1,11 +1,11 @@
 class ListsController < ApplicationController
-  before_action :require_login
+  before_action :authenticate_user!
   before_action :set_list, except: :create
   before_action :verify_list_belongs_to_current_user, only: :show
 
   def create
     @list = List.new(list_params)
-    @list.user_id = current_user_id
+    @list.user_id = current_user.id
 
     if @list.save
       redirect_to @list

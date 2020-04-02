@@ -7,7 +7,7 @@
 - [x] Refactor to use devise sign up
 - [x] Devise log in
 - [x] Refactor flash messages in view
-- [ ] Fix broken controller filters
+- [x] Fix broken controller filters
 
 ## OmniAuth
 

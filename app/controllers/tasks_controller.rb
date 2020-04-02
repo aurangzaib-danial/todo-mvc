@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :require_login
+  before_action :authenticate_user!
   before_action :set_list
   before_action :verify_list_belongs_to_current_user
   before_action :set_task, except: :create
