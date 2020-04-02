@@ -9,6 +9,30 @@ h1 {
   text-rendering: optimizeLegibility;
 }
 
+
+div.field_with_errors input{
+  border: 1px solid red;
+}
+
+div.flash {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 20px;
+  font-weight: normal;
+}
+
+div#flash_error {
+  color: red;
+}
+
+div#flash_notice {
+  color: $success;
+}
+
+div#flash_alert {
+  color: $info;
+}
+
 div.intro {
   font-size: 22px;
   text-align: center;

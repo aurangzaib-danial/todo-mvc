@@ -13,8 +13,8 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}", class: 'flash' if msg.is_a?(String) %>
     <% end %>
     
     <h1 id="<%= yield :main_text_id %>"><%= yield :main_text %></h1>

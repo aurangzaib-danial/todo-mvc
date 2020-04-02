@@ -5,9 +5,9 @@
 - [x] Install devise
 - [x] Change User table column names to match devise
 - [x] Refactor to use devise sign up
-- [ ] Devise log in
-- [ ] Refactor flash messages in view
-
+- [x] Devise log in
+- [x] Refactor flash messages in view
+- [ ] Fix broken controller filters
 
 ## OmniAuth
 
