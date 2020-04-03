@@ -21,16 +21,12 @@ div.flash {
   font-weight: normal;
 }
 
-div#flash_error {
-  color: red;
-}
-
 div#flash_notice {
   color: $teal;
 }
 
 div#flash_alert {
-  color: $info;
+  color: $red;
 }
 
 div.intro {

@@ -18,11 +18,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def auth_login
-    @user = User.find_or_create_from_auth_info(auth_hash[:info])
+    if auth_hash
+      @user = User.find_or_create_from_auth_info(auth_hash[:info])
 
-    @user.identities.create(provider: auth_hash[:provider], uid: auth_hash[:uid])
+      @user.identities.create(provider: auth_hash[:provider], uid: auth_hash[:uid])
 
-    sign_in_and_redirect(@user)
+      flash[:notice] = 'Signed in successfully.'
+      sign_in_and_redirect(@user)
+    end
   end
 
 end
