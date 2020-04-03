@@ -11,6 +11,6 @@
 
 ## OmniAuth
 
-- [ ] Remove Old OmniAuth setup
-- [ ] Configure OmniAuth with devise
-- [ ] Switch to Devise OmniAuth routes
+- [x] Remove Old OmniAuth setup
+- [x] Configure OmniAuth with devise
+- [x] Switch to Devise OmniAuth routes

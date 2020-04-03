@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'site#index'
 
-  devise_for :users, skip: :registrations
+  devise_for :users, skip: :registrations, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
 
   devise_scope :user do
     scope :users, module: :devise do
@@ -13,9 +13,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-
 
   resources :lists, only: [:create, :show, :destroy] do
     resources :tasks, only: [:create, :update, :destroy]

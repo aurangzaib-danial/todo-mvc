@@ -12,12 +12,13 @@ module ApplicationHelper
     content_for :main_text, text
   end
 
-
   def login_link(site)
 
-    url = "/auth/#{site}"
+    provider = site
     
-    url << '_oauth2' if site == 'google'
+    provider += '_oauth2' if site == 'google'
+
+    url = send("user_#{provider}_omniauth_authorize_path")
 
     link_text = "Sign in with #{site.capitalize}"
 
@@ -29,5 +30,6 @@ module ApplicationHelper
       content_tag(:span, nil, class: span_class) << link_text
     end
   end
+
 
 end
