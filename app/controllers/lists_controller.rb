@@ -11,7 +11,7 @@ class ListsController < ApplicationController
       redirect_to @list
     else
       @lists = List.all
-      render :index
+      render 'site/index'
     end
   end
 
