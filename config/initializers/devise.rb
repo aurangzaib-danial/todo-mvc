@@ -267,7 +267,7 @@ Devise.setup do |config|
   facebook = credentials[:facebook]
   google = credentials[:google]
 
-  config.omniauth :github, github[:app_id], github[:secret]
+  config.omniauth :github, github[:app_id], github[:secret], scope: 'user'
   config.omniauth :facebook, facebook[:app_id], facebook[:secret]
   config.omniauth :google_oauth2, google[:app_id], google[:secret]
 
