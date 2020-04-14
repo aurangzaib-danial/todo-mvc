@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_03_000822) do
+ActiveRecord::Schema.define(version: 2020_04_14_195516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "collaborator_lists", force: :cascade do |t|
+    t.bigint "collaborator_id", null: false
+    t.bigint "list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["collaborator_id"], name: "index_collaborator_lists_on_collaborator_id"
+    t.index ["list_id"], name: "index_collaborator_lists_on_list_id"
+  end
 
   create_table "identities", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -28,8 +37,8 @@ ActiveRecord::Schema.define(version: 2020_04_03_000822) do
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_lists_on_user_id"
+    t.bigint "creator_id", null: false
+    t.index ["creator_id"], name: "index_lists_on_creator_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -50,7 +59,9 @@ ActiveRecord::Schema.define(version: 2020_04_03_000822) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "collaborator_lists", "lists"
+  add_foreign_key "collaborator_lists", "users", column: "collaborator_id"
   add_foreign_key "identities", "users"
-  add_foreign_key "lists", "users"
+  add_foreign_key "lists", "users", column: "creator_id"
   add_foreign_key "tasks", "lists"
 end
