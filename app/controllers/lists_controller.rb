@@ -5,7 +5,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    @list.user_id = current_user.id
+    @list.creator = current_user
 
     if @list.save
       redirect_to @list

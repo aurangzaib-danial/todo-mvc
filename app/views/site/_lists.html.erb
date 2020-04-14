@@ -10,7 +10,7 @@
 <section class="main">
 
   <ul class="todo-list">
-    <%= render partial: 'lists/list_li', collection: current_user.lists, as: :list %>
+    <%= render partial: 'lists/list_li', collection: current_user.personal_lists, as: :list %>
   </ul>
 
 </section>
