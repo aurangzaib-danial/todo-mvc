@@ -10,4 +10,8 @@ class List < ApplicationRecord
   def collaborator_lists_with_collaborators
     collaborator_lists.includes(:collaborator)
   end
+
+  def has_at_least_one_collaborator?
+    collaborator_lists.any?
+  end
 end

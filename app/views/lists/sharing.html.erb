@@ -11,6 +11,6 @@
   <h4 id="shared_with">Shared with</h4>
   <ul class="todo-list">
     <%= render(partial: 'collaborator_lists/collaborator_list_li', collection: @list.collaborator_lists_with_collaborators, 
-      as: :collaborator_list, locals: { list: @list}) || empty_collection_error('Currently Shared with no one')  %>
+      as: :collaborator_list, locals: { list: @list}) || empty_collection_error('Currently shared with no one')  %>
   </ul>
 </section>
