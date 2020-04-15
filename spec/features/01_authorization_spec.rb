@@ -1,4 +1,4 @@
-describe 'List Authorization' do
+describe 'User with no permissions' do
   before do
     visit new_user_session_path
     fill_in :user_email, with: 'mark@m.com'
@@ -6,10 +6,12 @@ describe 'List Authorization' do
     click_button 'Sign in'
   end
 
-  context 'Simple User' do
-    it 'cannot view someone else list ' do
-      expect(page.body).to include('mark@m.com')
-    end
+  let(:error_message) { 'You are not authorized to access this page.'}
+
+  it 'cannot view someone else list ' do
+    visit list_path(List.first)
+    expect(page.body).to include(error_message)
   end
+
   
 end
