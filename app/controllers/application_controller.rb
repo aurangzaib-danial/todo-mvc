@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  private
-  def set_parent_list
-    @list = List.find(params[:list_id])
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:alert] = exception.message
+    redirect_to root_path
   end
 end

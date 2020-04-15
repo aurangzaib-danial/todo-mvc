@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_parent_list
+  before_action :authorize_read_list!
   before_action :set_task, except: :create
 
   def create
@@ -36,4 +36,8 @@ class TasksController < ApplicationController
     @task = @list.tasks.find(params[:id])
   end
 
+  def authorize_read_list!
+    @list = List.find(params[:list_id])
+    authorize! :read, @list
+  end
 end
