@@ -2,6 +2,7 @@ users = [
   {email: 'sunny@khan.com', password: 'khan1234'},
   {email: 'avi@fs.com', password: 'avi1234'},
   {email: 'jay@dota.com', password: 'jay1234'},
+  {email: 'mark@m.com', password: 'mark1234'}
 ]
 
 User.create!(users)
@@ -9,6 +10,7 @@ User.create!(users)
 sunny = User.first
 avi = User.second
 jay = User.third
+mark = User.fourth
 
 list_1 = sunny.personal_lists.create!(title: 'Learning Rails')
 list_1.collaborator_lists.create!(collaborator: avi)

@@ -82,6 +82,7 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
+    database_cleaner (1.8.4)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -278,6 +279,7 @@ DEPENDENCIES
   bootstrap
   byebug
   capybara
+  database_cleaner
   devise (~> 4.7)
   font-awesome-rails
   jbuilder (~> 2.7)
