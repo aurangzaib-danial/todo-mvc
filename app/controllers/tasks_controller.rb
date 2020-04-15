@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_list
-  before_action :verify_list_belongs_to_current_user
+  before_action :set_parent_list
   before_action :set_task, except: :create
 
   def create
@@ -31,10 +30,6 @@ class TasksController < ApplicationController
 
   def task_params(*args)
     params.require(:task).permit(*args)
-  end
-
-  def set_list
-    @list = List.find(params[:list_id])
   end
 
   def set_task

@@ -1,7 +1,6 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_list, except: %i[create shared]
-  before_action :verify_list_belongs_to_current_user, only: :show
 
   def create
     @list = List.new(list_params)

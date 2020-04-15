@@ -1,5 +1,5 @@
 class CollaboratorListsController < ApplicationController
-  before_action :set_list
+  before_action :set_parent_list
   def create
     @collaborator_list = CollaboratorList.new(collaborator_list_params.merge(list: @list))
 
@@ -19,9 +19,5 @@ class CollaboratorListsController < ApplicationController
   private
   def collaborator_list_params
     params.require(:collaborator_list).permit(:collaborator_email)
-  end
-
-  def set_list
-    @list = List.find(params[:list_id])
   end
 end
