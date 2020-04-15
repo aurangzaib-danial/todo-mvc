@@ -16,13 +16,11 @@ class TasksController < ApplicationController
 
   def update
     @task.update(task_params(:complete))
-
     redirect_to @list
   end
 
   def destroy
     @task.destroy
-
     redirect_to @list
   end
 

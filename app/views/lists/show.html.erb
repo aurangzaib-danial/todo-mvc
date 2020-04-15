@@ -14,5 +14,6 @@
 </section>
 
 <% content_for :page_specific_content do %>
-  <%= link_to 'Manage Sharing', sharing_list_path, class: 'btn btn-primary', role: 'button' %>
+  <%= link_to 'Manage Sharing', sharing_list_path, class: 'btn btn-primary', role: 'button' if can? :manage, @list %>
+  <%= content_tag :h6, "Shared by: #{@list.creator.email}" if @list.creator != current_user %>
 <% end %>
