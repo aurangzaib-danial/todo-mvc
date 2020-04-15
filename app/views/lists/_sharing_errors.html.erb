@@ -1,0 +1,9 @@
+<% if @collaborator_list.errors[:collaborator].present? %>
+  <p id="email_error">
+  <% if @collaborator_list.errors[:collaborator].first.include?('Already Shared!') %>
+    Already Shared!
+  <% else %>
+    Couldn't find user with that email
+  <% end %>
+  </p>
+<% end %>

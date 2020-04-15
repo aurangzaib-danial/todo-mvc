@@ -1,4 +1,5 @@
 class SiteController < ApplicationController
+  before_action :authenticate_user!, only: :shared
 
   def index
     if user_signed_in?
@@ -6,5 +7,4 @@ class SiteController < ApplicationController
       @lists = List.all
     end
   end
-
 end

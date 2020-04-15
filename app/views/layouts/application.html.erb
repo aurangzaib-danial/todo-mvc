@@ -26,6 +26,7 @@
       <%= render 'layouts/social_links' unless user_signed_in? %>
     </section> <!-- todoapp -->
 
+    <div id="page_specific_content"><%= yield :page_specific_content %></div>
     <%= render 'layouts/footer' %>
   </body>
 </html>

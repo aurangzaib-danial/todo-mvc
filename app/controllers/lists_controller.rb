@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_list, except: :create
+  before_action :set_list, except: %i[create shared]
   before_action :verify_list_belongs_to_current_user, only: :show
 
   def create
@@ -21,8 +21,15 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
-
     redirect_to root_path
+  end
+
+  def shared
+    @lists = current_user.shared_lists_with_creators
+  end
+
+  def sharing
+    @collaborator_list = CollaboratorList.new
   end
 
   private

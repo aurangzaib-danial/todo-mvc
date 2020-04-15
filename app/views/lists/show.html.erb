@@ -1,5 +1,4 @@
-<% main_text @list.title %>
-<% content_for :main_text_id, 'list-title' %>
+<% set_list_title %>
 
 <header class="header">
   <%= form_with model: [@list, @task], local: true do |task_form| %>
@@ -9,11 +8,11 @@
 </header>
 
 <section class="main">
-
   <ul class="todo-list">
-    
     <%= render collection: @list.tasks, partial: 'tasks/task_li', as: :task %>
-
   </ul>
-
 </section>
+
+<% content_for :page_specific_content do %>
+  <%= link_to 'Manage Sharing', sharing_list_path, class: 'btn btn-primary', role: 'button' %>
+<% end %>

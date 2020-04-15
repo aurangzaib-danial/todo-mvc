@@ -1,0 +1,8 @@
+<li>
+  <div class="view">
+    <label class='list-label'><%= collaborator_list.collaborator.email %></label>
+    <%= form_with model: [list, collaborator_list], method: :delete, local: true do %>
+      <button class="destroy" type="submit"></button>
+    <% end %>
+  </div>
+</li>

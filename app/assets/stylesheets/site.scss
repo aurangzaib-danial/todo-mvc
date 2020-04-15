@@ -89,6 +89,14 @@ section#credits {
   color: red;
 }
 
+div.view p {
+  margin-bottom: 0;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 @media (max-width: 500px) {
 
   .todoapp section.main {

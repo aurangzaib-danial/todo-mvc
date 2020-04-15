@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   end
 
   resources :lists, only: [:create, :show, :destroy] do
+    get 'sharing', on: :member
     resources :tasks, only: [:create, :update, :destroy]
+    resources :collaborator_lists, only: [:create, :destroy]
   end
+
+  get 'shared', to: 'lists#shared'
 end

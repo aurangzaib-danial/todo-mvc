@@ -44,7 +44,6 @@ body {
 
 .todoapp {
 	background: #fff;
-	margin-bottom: 40px;
 	position: relative;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
 	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
@@ -325,15 +324,14 @@ html .clear-completed:active {
 }
 
 .info {
-	margin: 65px auto 0;
-	color: #bfbfbf;
+margin: 50px auto 0;
 	font-size: 18px;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 	text-align: center;
 }
 
 .info p {
-	line-height: 1;
+	line-height: 1.5;
 }
 
 .info a {
@@ -344,6 +342,10 @@ html .clear-completed:active {
 
 .info a:hover {
 	text-decoration: underline;
+}
+
+.info form:last-child {
+	margin-top: 30px;
 }
 
 /*

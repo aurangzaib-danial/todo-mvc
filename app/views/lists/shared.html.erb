@@ -1,0 +1,9 @@
+<% main_text 'Shared' %>
+
+<section class="main">
+
+  <ul class="todo-list">
+    <%= render(partial: 'lists/shared_list_li', collection: @lists, as: :list) || empty_collection_error('No list is currently shared with you') %>
+  </ul>
+
+</section>

@@ -6,4 +6,8 @@ class List < ApplicationRecord
   has_many :tasks, dependent: :delete_all
 
   validates_presence_of :title
+
+  def collaborator_lists_with_collaborators
+    collaborator_lists.includes(:collaborator)
+  end
 end

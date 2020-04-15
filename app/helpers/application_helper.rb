@@ -31,5 +31,7 @@ module ApplicationHelper
     end
   end
 
-
+  def empty_collection_error(message)
+    content_tag(:h5, message, id: 'empty_collection_error')
+  end
 end

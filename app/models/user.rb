@@ -8,6 +8,10 @@ class User < ApplicationRecord
 
   has_many :identities, dependent: :destroy
 
+  def shared_lists_with_creators
+    shared_lists.includes(:creator)
+  end
+
   def self.find_or_create_from_auth_info(auth_info)
     
     find_or_create_by(email: auth_info[:email]) do |user|
