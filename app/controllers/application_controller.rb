@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
-  rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_path, alert: exception.message
+  include Pundit
+
+  rescue_from Pundit::NotAuthorizedError do
+    message = 'You are not authorized to access this page.'
+    redirect_to root_path, alert: message
   end
 end

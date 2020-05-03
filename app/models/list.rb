@@ -15,7 +15,7 @@ class List < ApplicationRecord
     collaborator_lists.any?
   end
 
-  def is_shared_with?(user)
+  def shared_with?(user)
     collaborator_lists.exists?(collaborator: user)
   end
 end
