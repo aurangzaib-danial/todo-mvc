@@ -266,10 +266,12 @@ Devise.setup do |config|
   github = credentials[:github]
   facebook = credentials[:facebook]
   google = credentials[:google]
+  twitter = credentials[:twitter]
 
   config.omniauth :github, github[:app_id], github[:secret], scope: 'user'
   config.omniauth :facebook, facebook[:app_id], facebook[:secret]
   config.omniauth :google_oauth2, google[:app_id], google[:secret]
+  config.omniauth :twitter, twitter[:app_id], twitter[:secret]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
