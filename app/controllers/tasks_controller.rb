@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :authorize_read_list!
-  before_action :set_task, except: :create
+  before_action :set_parent_list
+  after_action :verify_authorized
 
   def create
+    authorize @list, :show?
     @task = Task.new(task_params(:description))
     @task.list = @list
 
@@ -15,11 +16,15 @@ class TasksController < ApplicationController
   end
 
   def update
+    authorize @list, :show?
+    set_task
     @task.update(task_params(:complete))
     redirect_to @list
   end
 
   def destroy
+    authorize @list, :show?
+    set_task
     @task.destroy
     redirect_to @list
   end
@@ -32,10 +37,5 @@ class TasksController < ApplicationController
 
   def set_task
     @task = @list.tasks.find(params[:id])
-  end
-
-  def authorize_read_list!
-    @list = List.find(params[:list_id])
-    authorize! :read, @list
   end
 end

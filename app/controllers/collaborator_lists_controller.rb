@@ -1,8 +1,11 @@
 class CollaboratorListsController < ApplicationController
-  before_action :authorize_manage_list!
-  def create
-    @collaborator_list = CollaboratorList.new(collaborator_list_params.merge(list: @list))
+  before_action :authenticate_user!
+  before_action :set_parent_list
+  after_action :verify_authorized
 
+  def create
+    authorize @list, :sharing?
+    @collaborator_list = CollaboratorList.new(collaborator_list_params.merge(list: @list))
     if @collaborator_list.save
       redirect_to sharing_list_path(@list), notice: 'Successfully Shared!'
     else
@@ -11,6 +14,7 @@ class CollaboratorListsController < ApplicationController
   end
 
   def destroy
+    authorize @list, :sharing?
     @collaborator_list = @list.collaborator_lists.find(params[:id])
     @collaborator_list.destroy
     redirect_to sharing_list_path(@list), notice: 'Successfully Removed Collaborator!'
@@ -19,10 +23,5 @@ class CollaboratorListsController < ApplicationController
   private
   def collaborator_list_params
     params.require(:collaborator_list).permit(:collaborator_email)
-  end
-
-  def authorize_manage_list!
-    @list = List.find(params[:list_id])
-    authorize! :manage, @list
   end
 end

@@ -1,3 +1,3 @@
 # Switch to pundit from cancancan
 
-- [ ] Remove everything related to cancan
+- [x] Remove everything related to cancan
