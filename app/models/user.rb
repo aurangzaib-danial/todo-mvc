@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :rememberable, :validatable
   devise :omniauthable, omniauth_providers: %i(github google_oauth2 facebook twitter)
 
-  has_many :personal_lists, class_name: 'List', foreign_key: :creator_id, dependent: :destroy
+  has_many :personal_lists, class_name: 'List', foreign_key: :creator_id, dependent: :destroy, inverse_of: :creator
   has_many :collaborator_lists, foreign_key: :collaborator_id, dependent: :destroy
   has_many :shared_lists, through: :collaborator_lists, source: :list
 
